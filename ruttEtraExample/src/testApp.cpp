@@ -7,16 +7,18 @@ void testApp::setup(){
 	#ifdef TARGET_OPENGLES
 		ofHideCursor();
 	#endif
-	
+// different resolution
+// test with Logitech C910
 	#ifdef _USE_LIVE_VIDEO
         vidGrabber.setVerbose(true);
         vidGrabber.initGrabber(320,240);
 	#else
+//use different mp4
         vidPlayer.loadMovie("movies/fingers.mp4");
 		vidPlayer.setLoopState(OF_LOOP_NORMAL);//Quirk, This must be set on the Pi after loadMovie
         vidPlayer.play();
 	#endif
-
+// different resolution??
     colorImg.allocate(320,240);
 	grayImage.allocate(320,240);
 	fbo.allocate(ofGetWidth(), ofGetHeight());
@@ -30,7 +32,7 @@ void testApp::setup(){
 #else
 	colorFromHeightShader.load("shaders/ColorFromHeight");
 #endif
-	
+//different camera orbit values	
 	camera.setFov( 60.0f );
 	camera.setNearClip( 0.01f );
 	camera.setFarClip( 1024.0f );
@@ -96,9 +98,9 @@ void testApp::update()
 		if( palettes.size() > 0 && paletteIndex < palettes.size())  currPalette = &palettes.at(paletteIndex);
 			
 		linesHeight = 80.0f;
-		
+	// change lineSkip values	
 		lineSkip = 4; //ofMap( cos(time * 1.1f), -1.0f, 1.0f, 2, 25 );
-		
+	// lose auto orbit functionality	
 		// if we click, wait a bit until we auto orbit the camera
 		if( (time - lastClickTime) > 4.0 )
 		{
