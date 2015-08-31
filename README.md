@@ -1,5 +1,4 @@
-RaspberryPiGuideCAN
-===================
+Jumping off point for interactive sound, using analog input from Ultrasonic Range Finder to trigger and manipulate audio samples.
 
-Example projects for a guide on the Raspberry Pi written for Creativeapplications.net
+
 
